@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -24,10 +25,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <form>
-        <label htmlFor="name">Search: </label>
-        <input id='name' type='text' name='name' placeholder='search' onChange={handleChange} value={searchTerm} />
-      </form>
+      <SearchForm handleChange={handleChange} searchTerm={searchTerm} />
       <div>
         {searchResults.map(character => {
           return (
