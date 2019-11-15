@@ -42,7 +42,7 @@ const ButtonContainer = styled.div`
 export default function LocationsList() {
     const [searchTermEpisode, setSearchTermEpisode] = useState('');
     const [searchResultsEpisode, setSearchResultsEpisode] = useState([]);
-    const [page, setPage] = useState(`page=2`);
+    const [page, setPage] = useState(`page=1`);
 
     function getPage(direction) {
       const numberPattern = /\d+/g;
