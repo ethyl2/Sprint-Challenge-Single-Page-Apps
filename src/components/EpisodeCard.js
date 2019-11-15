@@ -20,13 +20,13 @@ const CardDiv = styled.div`
   }
 `;
 
-export default function LocationCard({ location }) {
+export default function LocationCard({ item }) {
   return (
     <CardDiv >
-      <h2>{location.name}</h2>
-      <h3>Type: {location.type}</h3>
-      <h3>Dimension: {location.dimension}</h3>
-      <h3>Number of Residents: {location.residents.length}</h3>
+      <h2>{item.name}</h2>
+      <h3>Air Date: {item.air_date}</h3>
+      <h3>Episode: {item.episode}</h3>
+      <h3>Number of Characters: {item.characters.length}</h3>
     </CardDiv>
   );
 }

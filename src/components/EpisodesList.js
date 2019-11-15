@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import LocationCard from './LocationCard';
+import EpisodeCard from './EpisodeCard';
 import styled from 'styled-components';
 
 const CardsBox = styled.div`
@@ -12,7 +12,7 @@ const CardsBox = styled.div`
 `;
 
 const StyledForm = styled.form`
-  width: 50%;
+  width: 35%;
   margin: 1.5rem auto;
   font-family: 'Gaegu', cursive;
   font-size: 2rem;
@@ -40,8 +40,8 @@ const ButtonContainer = styled.div`
 `;
 
 export default function LocationsList() {
-    const [searchTermLocation, setSearchTermLocation] = useState('');
-    const [searchResultsLocation, setSearchResultsLocation] = useState([]);
+    const [searchTermEpisode, setSearchTermEpisode] = useState('');
+    const [searchResultsEpisode, setSearchResultsEpisode] = useState([]);
     const [page, setPage] = useState(`page=1`);
 
     function getPage(direction) {
@@ -50,43 +50,43 @@ export default function LocationsList() {
       //console.log(num);
       (direction === "next")? num++ : num--;
     
-      if (num > 4) {
+      if (num > 2) {
         num = 1;
       }
       if (num < 1) {
-        num = 4;
+        num = 2;
     }
       //console.log(num);
       setPage(`page=${num}`);  
     }
 
     useEffect(() => {
-    axios.get(`https://rickandmortyapi.com/api/location/?${page}`)
+    axios.get(`https://rickandmortyapi.com/api/episode/?${page}`)
       .then(response => {
         //console.log(response.data.results);
-        const winners = response.data.results.filter(place => place.name.toLowerCase().includes(searchTermLocation.toLowerCase()));
-        setSearchResultsLocation(winners);
+        const winners = response.data.results.filter(item => item.name.toLowerCase().includes(searchTermEpisode.toLowerCase()));
+        setSearchResultsEpisode(winners);
       })
-  }, [searchTermLocation, page]);
+  }, [searchTermEpisode, page]);
 
   const handleChange = event => {
-    setSearchTermLocation(event.target.value);
+    setSearchTermEpisode(event.target.value);
   }
 
   return (
       <div>
             <StyledForm>
             <label htmlFor="name">Search: </label>
-                <input id='name' type='text' name='name' placeholder=' 🔎 search' onChange={handleChange} value={searchTermLocation} />
+                <input id='name' type='text' name='name' placeholder=' 🔎 search' onChange={handleChange} value={searchTermEpisode} />
             </StyledForm>
             <ButtonContainer>
               <button onClick={() => getPage("previous")}>⬅️ Previous Page</button>
               <button onClick={() => getPage("next")}>Next Page ➡️</button>
             </ButtonContainer>
             <CardsBox>
-            {searchResultsLocation.map(place => {
+            {searchResultsEpisode.map(item => {
             return (
-                <LocationCard  key={place.id} location={place}/>
+                <EpisodeCard  key={item.id} item={item}/>
                 )} 
             )}
             </CardsBox>

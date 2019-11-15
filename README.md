@@ -25,9 +25,19 @@ In this challenge, you will create a Single Page Application complete with Clien
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-- [ ]  Explain benefit(s) using `client-side routing`?
+- [x]  Explain benefit(s) using `client-side routing`?
 
 > Answer:
+With server-side routing, every request causes a full-page refresh. This has two disadvantages: it might cause data to requested that isn’t really necessary – if an element of a web site stayed the same, there really is no need to request the data for it again. However, with client-side routing, the whole page doesn’t have to be re-rendered. Only the elements that change, due to the changed state of the application, are re-rendered.
+
+Also, with server-side routing, it can take a while for pages to be rendered each time a request is made, depending on the size of the document and the speed of the internet connection. That could create a more frustrating and less responsive user experience. However, with client-side routing, the initial request might take a bit longer to load, but there is less delay when displaying different pages/views. That happens because less data has to be processed.
+
+Client-side routing can overcome the disadvantage of longer initial load time, at least somewhat, by lazy loading sections. More elements can be added as necessary, as the user needs them, such as only doing an api request and displaying elements once the user scrolls down, or changes their search parameters.
+
+One more possible advantage to client-side routing is that transitions and animations between views are easier to implement. With server-side, it can be more complex, such as maintaining the same template on the client and the server or using JavaScript interactions with a server-side framework.
+
+Client-side-routed apps can be cheaper or free to host, compared to server-side ones. This is because serving static files doesn’t require as much horsepower, and they can be hosted via a CDN. CDNs globally distribute assets and remove load from the webserver. Also, client-side-routed apps can be easier to deploy.
+
 
 ## Project Set Up
 
