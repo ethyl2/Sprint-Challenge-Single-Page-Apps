@@ -42,7 +42,7 @@ export default function LocationsList() {
       <div>
             <StyledForm>
             <label htmlFor="name">Search: </label>
-                <input id='name' type='text' name='name' placeholder=' search' onChange={handleChange} value={searchTermLocation} />
+                <input id='name' type='text' name='name' placeholder=' 🔎 search' onChange={handleChange} value={searchTermLocation} />
             </StyledForm>
             <CardsBox>
             {searchResultsLocation.map(place => {

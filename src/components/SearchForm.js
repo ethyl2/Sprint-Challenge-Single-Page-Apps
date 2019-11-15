@@ -18,7 +18,7 @@ export default function SearchForm( {handleChange, searchTerm }) {
     <section className="search-form">
      <StyledForm>
         <label htmlFor="name">Search: </label>
-        <input id='name' type='text' name='name' placeholder=' search' onChange={handleChange} value={searchTerm} />
+        <input id='name' type='text' name='name' placeholder=' 🔎 search' onChange={handleChange} value={searchTerm} />
       </StyledForm>
     </section>
   );
