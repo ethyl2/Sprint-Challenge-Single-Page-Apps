@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Route } from 'react-router-dom';
 import CharacterList from './CharacterList';
 import WelcomePage from './WelcomePage';
+import LocationsList from './LocationsList';
 import styled from 'styled-components';
 
 const CrazyHeader = styled.header`
@@ -53,10 +54,12 @@ export default function Header() {
       <LinkContainer>
         <Link to='/'>Home</Link>
         <Link to='/characters'>Characters</Link>
+        <Link to='/locations'>Locations</Link>
       </LinkContainer> 
     </CrazyHeader>
     <Route exact path='/' component={WelcomePage} />
     <Route path='/characters' component={CharacterList} />
+    <Route path='/locations' component={LocationsList} />
     </div>
   );
 }
