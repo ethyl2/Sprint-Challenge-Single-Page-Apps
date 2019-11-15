@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import CharacterCard from './CharacterCard';
 import SearchForm from './SearchForm';
+import styled from 'styled-components';
+
+const CardsBox = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  justify-items: center;
+`;
+
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -26,14 +36,14 @@ export default function CharacterList() {
   return (
     <section className="character-list">
       <SearchForm handleChange={handleChange} searchTerm={searchTerm} />
-      <div>
+      <CardsBox>
         {searchResults.map(character => {
           return (
             <CharacterCard character={character} key={character.id}/>
           )} 
 
         )}
-      </div>
+      </CardsBox>
     </section>
   );
 }

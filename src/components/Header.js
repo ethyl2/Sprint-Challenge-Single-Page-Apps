@@ -6,6 +6,8 @@ import styled from 'styled-components';
 
 const CrazyHeader = styled.header`
   background: black;
+  margin: 0;
+  padding: 0.5rem;
 `;
 
 const CrazyH1 = styled.h1`
@@ -30,6 +32,7 @@ const LinkContainer = styled.div`
   align-items: center;
   background: #46942D;
   height: 2rem;
+  border-radius: 3px;
   a {
     text-decoration: none;
     color: white;
