@@ -63,7 +63,7 @@ export default function LocationsList() {
     useEffect(() => {
     axios.get(`https://rickandmortyapi.com/api/episode/?${page}`)
       .then(response => {
-        console.log(response.data.results);
+        //console.log(response.data.results);
         const winners = response.data.results.filter(item => item.name.toLowerCase().includes(searchTermEpisode.toLowerCase()));
         setSearchResultsEpisode(winners);
       })
