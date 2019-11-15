@@ -12,7 +12,7 @@ const ImgContainer = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    width: 100%;
+    max-width: 100%;
     box-shadow: 5px 10px 8px 8px #888888;
   }
 `;

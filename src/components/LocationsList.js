@@ -16,8 +16,12 @@ const StyledForm = styled.form`
   margin: 1.5rem auto;
   font-family: 'Gaegu', cursive;
   font-size: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   input {
     height: 2rem;
+    margin-left: 0.5rem;
   }
 `;
 
